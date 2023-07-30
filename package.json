@@ -16,7 +16,9 @@
     "clean:ios:cocopods": "rm -rf ~/Library/Caches/CocoaPods && rm -rf ios/Pods",
     "post-install": "react-native setup-ios-permissions && cd ios && pod install --verbose && cd ..",
     "build-apk": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
-    "adb-reverse": "adb reverse tcp:8081 tcp:8081"
+    "adb-reverse": "adb reverse tcp:8081 tcp:8081",
+    "remove-duplicates": "rm -rf ./android/app/src/main/res/drawable-* && rm -rf ./android/app/src/main/res/raw && rm -rf ./android/app/build/generated/res/createBundleReleaseJsAndAssets/drawable-*",
+    "generate-release": "cd android && ./gradlew assembleRelease && cd .."
   },
   "dependencies": {
     "@react-native-community/netinfo": "^9.4.1",
