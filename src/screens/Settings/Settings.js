@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import BackButton from '../../components/BackButton';
+import ListItem from '../../components/ListItem';
 
 const Settings = ({navigation}) => {
   const navigateTo = () => {
@@ -9,7 +10,8 @@ const Settings = ({navigation}) => {
   return (
     <View style={styles.container}>
       <BackButton onPress={navigateTo} title={'Settings'} />
-      <Text>Settings</Text>
+      <ListItem title={'Privacy Policy'} />
+      <ListItem title={'About'} />
     </View>
   );
 };
